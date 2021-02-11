@@ -1,20 +1,34 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html> <!-- Leo Lee, 2/12/2021 -->
+<html lang="en-us">
 	<head>
 		<title>Twin Cities Ice Cream | Your guide to the best ice cream the cities have to offer.</title>
+		<meta charset="UTF-8">
+		<meta name="keywords" content="Ice cream,Twin Cities,Twin Cities Ice cream, Best, Best Ice cream">
+		<meta name="description" content="Your guide to the best ice cream Twin Cities have to offer.">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="Leo Lee">
+
 		<link rel="shortcut icon" href="images/icecreamicon.png">
 		<!-- External CSS link can go here-->
-		
+		<link rel="stylesheet" href="style.css">
 		
 		<!--Resourcing Google Font-->
 		<link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700" rel="stylesheet">
 		<!--Internal CSS Styling below-->
 		<style>
-
+			#bottom_footer{
+				width: 100%;
+				clear: both;
+				height: 75px;
+				background-color: #474747;
+			}
 		</style>
 		
 	</head>
 	<body>
+		<header>
+
+		</header>
 		<div id="headerstruct">
 			<header class="struct">
 				<div id="logo"><img src="images/ice_cream_social.png" alt="logo"></div>
@@ -62,15 +76,19 @@
 		<div id="blockstruct3">
 			<div class="contain">
 				<div class="blockcontain">
-					<div class="columnstruct">
-
+					<div class="columnstruct" style="font-family: 'Amatic SC', cursive; color: white; padding: 3%; font-size: 2vw;">
+						<p>
+							My favorite ice cream shop is Cullens, a family owned shop only found in the cities. I like this shop as they provide some of the best exclusive flavors in the area with a fun atmosphere.
+						</p>
 					</div>		
 				</div><!--End of blockcontain-->
 			</div><!--end contain-->
 		</div><!--End of block struct 3 -->
 
 		<!--Add Footer below-->
-		
+		<footer id = "bottom_footer">
+
+		</footer>
 		<script>
 		
 		function displayShop(id){
@@ -90,9 +108,9 @@
 				startPos = position;
 				document.getElementById('startLat').innerHTML = startPos.coords.latitude;
 				document.getElementById('startLon').innerHTML = startPos.coords.longitude;
-			  };
-			  navigator.geolocation.getCurrentPosition(geoSuccess);*/
-			  
+			};
+			navigator.geolocation.getCurrentPosition(geoSuccess);*/
+			
 				var mapLat, mapLong;
 				if(id === "izzydisplay"){
 					mapLat = 44.976537;
@@ -106,24 +124,23 @@
 			}
 			
 			function initMap(latitude, longitude, id) {
-			  var shopMapValue = "map"+id;
-			 
-			  var uluru = {lat: parseFloat(latitude), lng: parseFloat(longitude)};
-			  var map = new google.maps.Map(document.getElementById(shopMapValue),{
+			var shopMapValue = "map"+id;
+			
+			var uluru = {lat: parseFloat(latitude), lng: parseFloat(longitude)};
+			var map = new google.maps.Map(document.getElementById(shopMapValue),{
 				zoom: 17,
 				center: uluru
-			  });
-			  var marker = new google.maps.Marker({
+			});
+			var marker = new google.maps.Marker({
 				position: uluru,
 				map: map
-			  });
+			});
 			}
 		
 		
 		</script>
 		
-		<script async defer src="https://maps.googleapis.com/maps/api/js?key=[YOUR OWN API KEY]&callback=initMap">
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjncemY6qJ6JpU7oYxLwzOw0Cf_oHcCzI&callback=initMap">
 		</script>
-
 	</body>
 </html>
